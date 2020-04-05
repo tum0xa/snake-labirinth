@@ -88,8 +88,9 @@ class SnakeEye:
 
         if self.state == 1:  # Open
             circle(self.head.surface, self.color, eye_position, self.size)
-        elif self.state == 2: # Close
+        elif self.state == 2:  # Close
             circle(self.head.surface, self.color, eye_position, self.size, 1)
+
 
 class SnakeHead(SnakeBlock):
     TO_LEFT = 1
@@ -175,6 +176,7 @@ class Snake:
         self.speed = 0
         self.head.left_eye.close()
         self.head.right_eye.close()
+
     def move(self):
         if self.head.top % settings.DEFAULT_CELL_SIZE == 0:
             if self.direction == self.TO_LEFT:
